@@ -11,11 +11,13 @@ func _ready():
 	direction = Vector2(-1, 0)
 	position = Vector2(480, 324)
 	Globals.ball_position = position
-	Globals.isGameActive = true
-	print(Globals.isGameActive)
+	Globals.is_game_active = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	if not Globals.is_game_active:
+		pass #print('Ball: Game not Active')
 	velocity = direction * speed
 	move_and_slide()
 	
@@ -42,6 +44,6 @@ func _on_hitbox_body_entered(body):
 		direction.y = -1
 	
 func destroy_ball() -> void:
+	Globals.is_game_active = false
 	score.emit()
-	Globals.isGameActive = false
 	queue_free()	
