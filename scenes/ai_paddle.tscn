@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ysuj38ua4wbd"]
+
+[ext_resource type="Script" path="res://scenes/ai_paddle.gd" id="1_sppcn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1btn"]
+size = Vector2(10, 80)
+
+[node name="AI_Paddle" type="CharacterBody2D"]
+script = ExtResource("1_sppcn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k1btn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -5.0
+offset_top = -40.0
+offset_right = 5.0
+offset_bottom = 40.0

@@ -11,5 +11,19 @@ config_version=5
 [application]
 
 config/name="Pong 20 Gc"
+run/main_scene="res://scenes/level.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://globals/globals.gd"
+
+[display]
+
+window/size/viewport_width=960
+
+[layer_names]
+
+2d_physics/layer_1="Paddles"
+2d_physics/layer_2="Ball"
