@@ -9,3 +9,4 @@ func spawn_new_ball() -> void:
 	var ball = ball_scene.instantiate()
 	add_child(ball)
 	ball.connect('score', spawn_new_ball)
+	$UI.update_score()
